@@ -12,7 +12,12 @@ void Market::updateMarket()
     }
 }
 
-const std::unordered_map<std::string, Stock> &Market::getStocks() const
+const std::unordered_map<std::string, Stock>& Market::getStocks() const
+{
+    return stocks;
+}
+
+std::unordered_map<std::string, Stock>& Market::getStocksMutable()
 {
     return stocks;
 }

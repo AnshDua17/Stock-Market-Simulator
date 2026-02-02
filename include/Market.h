@@ -12,10 +12,12 @@ private:
 
 public:
     void addStock(const Stock& stock);
-
     void updateMarket();
 
-    const std::unordered_map<std::string, Stock> &getStocks() const;
+    const std::unordered_map<std::string, Stock>& getStocks() const;
+
+    std::unordered_map<std::string, Stock>& getStocksMutable();
+
 };
 
 #endif
