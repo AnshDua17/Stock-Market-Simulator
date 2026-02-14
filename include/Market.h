@@ -14,10 +14,10 @@ public:
     void addStock(const Stock& stock);
     void updateMarket();
 
+    void placeBuy(const std::string& symbol, int qty);
+    void placeSell(const std::string& symbol, int qty);
+
     const std::unordered_map<std::string, Stock>& getStocks() const;
-
-    std::unordered_map<std::string, Stock>& getStocksMutable();
-
 };
 
 #endif

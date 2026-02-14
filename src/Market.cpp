@@ -1,23 +1,29 @@
 #include "Market.h"
 
-void Market::addStock(const Stock &stock)
+void Market::addStock(const Stock& stock)
 {
     stocks.emplace(stock.getSymbol(), stock);
 }
 
 void Market::updateMarket()
 {
-    for(auto& s:stocks){
-        s.second.updatePrice();
+    for (auto& pair : stocks)
+    {
+        pair.second.updatePrice();
     }
 }
 
-const std::unordered_map<std::string, Stock>& Market::getStocks() const
+void Market::placeBuy(const std::string& symbol, int qty)
 {
-    return stocks;
+    stocks.at(symbol).placeBuy(qty);
 }
 
-std::unordered_map<std::string, Stock>& Market::getStocksMutable()
+void Market::placeSell(const std::string& symbol, int qty)
+{
+    stocks.at(symbol).placeSell(qty);
+}
+
+const std::unordered_map<std::string, Stock>& Market::getStocks() const
 {
     return stocks;
 }

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.10)
 
 project(StockMarketSimulator)
 
@@ -9,6 +9,6 @@ include_directories(include)
 
 add_executable(simulator
     src/main.cpp
-    src/Stock.cpp
     src/Market.cpp
+    src/stock.cpp
 )

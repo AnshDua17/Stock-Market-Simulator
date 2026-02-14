@@ -12,15 +12,15 @@ private:
     int buyVolume;
     int sellVolume;
 
-    double volatility;
     double trendStrength;
+    double lastPriceChange;
 
 public:
-    Stock(const std::string &symbol, double price);
+    Stock(const std::string& symbol, double price);
 
-    void placeBuy(int buyVolume);
-    void placeSell(int sellVolume);
-    
+    void placeBuy(int quantity);
+    void placeSell(int quantity);
+
     void updatePrice();
 
     std::string getSymbol() const;
